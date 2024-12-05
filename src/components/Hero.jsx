@@ -11,30 +11,46 @@ const ToggleTypeWriter = ({ texts, className }) => {
   const totalLetters = lines.reduce((acc, line) => acc + line.length, 0);
 
   useEffect(() => {
+    let isMounted = true;
+
     const animate = async () => {
-      while (true) {
-        // Type forward
-        await controls.start(i => ({
-          opacity: 1,
-          transition: { delay: i * 0.1 }
-        }));
-        
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
-        // Type backward
-        await controls.start(i => ({
-          opacity: 0,
-          transition: { delay: (totalLetters - i - 1) * 0.05 }
-        }));
-        
-        await new Promise(resolve => setTimeout(resolve, 500));
-        
-        // Switch to next text
-        setCurrentTextIndex((prev) => (prev + 1) % texts.length);
+      if (!isMounted) return;
+
+      // Type forward
+      await controls.start(i => ({
+        opacity: 1,
+        transition: { delay: i * 0.1 }
+      }));
+      
+      if (!isMounted) return;
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      if (!isMounted) return;
+      // Type backward
+      await controls.start(i => ({
+        opacity: 0,
+        transition: { delay: (totalLetters - i - 1) * 0.05 }
+      }));
+      
+      if (!isMounted) return;
+      await new Promise(resolve => setTimeout(resolve, 500));
+      
+      if (!isMounted) return;
+      // Switch to next text
+      setCurrentTextIndex((prev) => (prev + 1) % texts.length);
+      
+      // Continue the loop
+      if (isMounted) {
+        requestAnimationFrame(animate);
       }
     };
-    
+
     animate();
+
+    return () => {
+      isMounted = false;
+      controls.stop();
+    };
   }, [controls, totalLetters, texts.length]);
 
   return (
