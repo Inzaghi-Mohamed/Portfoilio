@@ -2,6 +2,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import youfocusImage from '../assets/Youfocus.png';
+import Profl from '../assets/Profl.jpg';
+import HeroImage from '../assets/HeroImage.jpg';
+
 
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -33,7 +36,7 @@ const Projects = () => {
       title: 'Project 2',
       description:
         'An e-commerce platform with advanced filtering, shopping cart functionality, and secure payment integration using Stripe.',
-      image: '/project2.jpg',
+      image: HeroImage,
       technologies: ['React', 'Redux', 'Node.js', 'PostgreSQL'],
       liveUrl: 'https://project2.com',
       githubUrl: 'https://github.com/yourusername/project2',
@@ -42,7 +45,7 @@ const Projects = () => {
       title: 'Project 3',
       description:
         'A real-time chat application with features like group messaging, file sharing, and message encryption.',
-      image: '/project3.jpg',
+      image: Profl,
       technologies: ['React', 'Socket.io', 'Node.js', 'MongoDB'],
       liveUrl: 'https://project3.com',
       githubUrl: 'https://github.com/yourusername/project3',

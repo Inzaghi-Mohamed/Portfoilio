@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';
 import { useTheme } from '../context/ThemeContext';
+import Profl from '../assets/Profl.jpg';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,10 +23,14 @@ const Navbar = () => {
           {/* Logo */}
           <motion.a
             href="#home"
-            className="text-2xl font-bold text-primary"
+            className="flex items-center"
             whileHover={{ scale: 1.05 }}
           >
-            AM
+            <img
+              src={Profl}
+              alt="Profile"
+              className="w-10 h-10 rounded-full object-cover border-2 border-primary dark:border-blue-400"
+            />
           </motion.a>
 
           {/* Desktop Navigation */}

@@ -1,11 +1,14 @@
 import { motion, useAnimation } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa';
-import heroImage from '../assets/HeroImage.jpg'
-import { useEffect } from 'react';
+import heroImage from '../assets/Profl.jpg';
+import { useEffect, useState } from 'react';
 
-const TypeWriter = ({ text, className }) => {
+const ToggleTypeWriter = ({ texts, className }) => {
   const controls = useAnimation();
-  const letters = Array.from(text);
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const currentText = texts[currentTextIndex];
+  const lines = currentText.split('\n');
+  const totalLetters = lines.reduce((acc, line) => acc + line.length, 0);
 
   useEffect(() => {
     const animate = async () => {
@@ -21,28 +24,41 @@ const TypeWriter = ({ text, className }) => {
         // Type backward
         await controls.start(i => ({
           opacity: 0,
-          transition: { delay: (letters.length - i - 1) * 0.05 }
+          transition: { delay: (totalLetters - i - 1) * 0.05 }
         }));
         
         await new Promise(resolve => setTimeout(resolve, 500));
+        
+        // Switch to next text
+        setCurrentTextIndex((prev) => (prev + 1) % texts.length);
       }
     };
     
     animate();
-  }, [controls, letters.length]);
+  }, [controls, totalLetters, texts.length]);
 
   return (
     <span className={className}>
-      {letters.map((letter, i) => (
-        <motion.span
-          key={i}
-          custom={i}
-          animate={controls}
-          initial={{ opacity: 0 }}
-          className="inline-block"
-        >
-          {letter}
-        </motion.span>
+      {lines.map((line, lineIndex) => (
+        <span key={`line-${lineIndex}`} className="block">
+          {Array.from(line).map((letter, i) => {
+            const globalIndex = lines
+              .slice(0, lineIndex)
+              .reduce((acc, line) => acc + line.length, 0) + i;
+            return (
+              <motion.span
+                key={`${currentText}-${lineIndex}-${i}`}
+                custom={globalIndex}
+                animate={controls}
+                initial={{ opacity: 0 }}
+                className="inline-block"
+                style={{ whiteSpace: 'pre' }}
+              >
+                {letter}
+              </motion.span>
+            );
+          })}
+        </span>
       ))}
     </span>
   );
@@ -79,11 +95,17 @@ const Hero = () => {
             className="text-left"
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-              Hi, I'm <TypeWriter text="Abdirizak" className="text-primary dark:text-blue-400" />
+              Hi, I'm <ToggleTypeWriter 
+                texts={[
+                  "Abdirizak",
+                  "Fullstack\nDeveloper"
+                ]} 
+                className="text-primary dark:text-blue-400" 
+              />
             </h1>
-            <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-700 dark:text-gray-300 mb-8">
+            {/* <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-700 dark:text-gray-300 mb-8">
               Fullstack Developer
-            </h2>
+            </h2> */}
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}

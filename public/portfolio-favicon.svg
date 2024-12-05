@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background hexagon -->
+  <path d="M16 2L29.856 9V23L16 30L2.144 23V9L16 2Z" fill="#282c34"/>
+  <!-- Text -->
+  <text x="16" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#61DAFB" text-anchor="middle" dominant-baseline="middle">AM</text>
+  <!-- Orbital ring -->
+  <path d="M16 4C22 4 27 8 27 16C27 24 22 28 16 28" fill="none" stroke="#61DAFB" stroke-width="1" opacity="0.5"/>
+  <path d="M16 4C10 4 5 8 5 16C5 24 10 28 16 28" fill="none" stroke="#61DAFB" stroke-width="1" opacity="0.5"/>
+</svg>
