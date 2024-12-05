@@ -16,6 +16,23 @@ const Navbar = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      // Close mobile menu first
+      setIsOpen(false);
+      // Wait for menu animation to complete
+      setTimeout(() => {
+        const offsetTop = element.offsetTop;
+        window.scrollTo({
+          top: offsetTop - 64, // Adjust for navbar height
+          behavior: 'smooth'
+        });
+      }, 300);
+    }
+  };
+
   return (
     <nav className="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-lg">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,6 +42,7 @@ const Navbar = () => {
             href="#home"
             className="flex items-center"
             whileHover={{ scale: 1.05 }}
+            onClick={(e) => handleNavClick(e, '#home')}
           >
             <img
               src={Profl}
@@ -41,6 +59,7 @@ const Navbar = () => {
                 href={item.href}
                 className="text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors"
                 whileHover={{ scale: 1.1 }}
+                onClick={(e) => handleNavClick(e, item.href)}
               >
                 {item.name}
               </motion.a>
@@ -103,7 +122,7 @@ const Navbar = () => {
                   href={item.href}
                   className="block py-2 text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors"
                   whileHover={{ x: 10 }}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => handleNavClick(e, item.href)}
                 >
                   {item.name}
                 </motion.a>

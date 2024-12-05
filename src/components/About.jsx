@@ -19,11 +19,11 @@ const About = () => {
     { name: 'Node.js', icon: FaNodeJs, color: 'text-green-500' },
     { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-600' },
     { name: 'Express.js', icon: SiExpress, color: 'text-gray-700 dark:text-gray-300' },
-    { name: 'PostgreSQL', icon: SiPostgresql, color: 'text-blue-400' },
-    { name: 'Redux', icon: SiRedux, color: 'text-purple-500' },
-    { name: 'Tailwind CSS', icon: SiTailwindcss, color: 'text-cyan-500' },
-    { name: 'ShadCN UI', icon: ShadcnIcon, color: 'text-gray-800 dark:text-gray-200' },
     { name: 'MongoDB', icon: SiMongodb, color: 'text-green-600' },
+    { name: 'PostgreSQL', icon: SiPostgresql, color: 'text-blue-700' },
+    { name: 'Redux', icon: SiRedux, color: 'text-purple-600' },
+    { name: 'Tailwind CSS', icon: SiTailwindcss, color: 'text-cyan-500' },
+    { name: 'Shadcn/ui', icon: ShadcnIcon, color: 'text-gray-700 dark:text-gray-300' },
   ];
 
   const containerVariants = {
@@ -45,7 +45,7 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-900">
+    <section id="about" className="py-16 bg-white dark:bg-gray-900">
       <div className="section-container">
         <motion.div
           initial="hidden"

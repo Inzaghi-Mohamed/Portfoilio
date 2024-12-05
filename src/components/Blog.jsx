@@ -3,7 +3,7 @@ import { FaArrowRight } from 'react-icons/fa';
 
 const Blog = () => {
   return (
-    <section id="blog" className="py-20 bg-white dark:bg-gray-900">
+    <section id="blog" className="py-16 bg-white dark:bg-gray-900">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

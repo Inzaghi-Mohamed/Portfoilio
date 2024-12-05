@@ -30,7 +30,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800">
+    <section id="contact" className="py-16 bg-white dark:bg-gray-900">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
