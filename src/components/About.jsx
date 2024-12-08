@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa';
-import { SiTypescript, SiTailwindcss, SiMongodb, SiExpress, SiPostgresql, SiRedux } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaDatabase, FaHtml5, FaCss3Alt, FaJs, FaRobot, FaCode } from 'react-icons/fa';
+import { SiTypescript, SiTailwindcss, SiMongodb, SiExpress, SiPostgresql, SiRedux, SiNextdotjs } from 'react-icons/si';
 
 const ShadcnIcon = ({ className }) => (
   <svg
@@ -15,7 +15,11 @@ const ShadcnIcon = ({ className }) => (
 
 const About = () => {
   const skills = [
+    { name: 'HTML', icon: FaHtml5, color: 'text-orange-500' },
+    { name: 'CSS', icon: FaCss3Alt, color: 'text-blue-400' },
+    { name: 'JavaScript', icon: FaJs, color: 'text-yellow-400' },
     { name: 'React', icon: FaReact, color: 'text-blue-500' },
+    { name: 'Next.js', icon: SiNextdotjs, color: 'text-black dark:text-white' },
     { name: 'Node.js', icon: FaNodeJs, color: 'text-green-500' },
     { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-600' },
     { name: 'Express.js', icon: SiExpress, color: 'text-gray-700 dark:text-gray-300' },
@@ -23,6 +27,8 @@ const About = () => {
     { name: 'PostgreSQL', icon: SiPostgresql, color: 'text-blue-700' },
     { name: 'Redux', icon: SiRedux, color: 'text-purple-600' },
     { name: 'Tailwind CSS', icon: SiTailwindcss, color: 'text-cyan-500' },
+    { name: 'Material UI', icon: FaCode, color: 'text-blue-400' },
+    { name: 'AI Coding', icon: FaRobot, color: 'text-gray-600 dark:text-gray-400' },
     { name: 'Shadcn/ui', icon: ShadcnIcon, color: 'text-gray-700 dark:text-gray-300' },
   ];
 

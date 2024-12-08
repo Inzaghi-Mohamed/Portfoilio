@@ -1,5 +1,5 @@
 import { motion, useAnimation } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaYoutube, FaDownload } from 'react-icons/fa';
 import heroImage from '../assets/Profl.jpg';
 import { useEffect, useState } from 'react';
 
@@ -143,13 +143,14 @@ const Hero = () => {
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 rounded-full bg-primary dark:bg-blue-600 text-white hover:bg-primary/90 dark:hover:bg-blue-700 transition-colors"
+                className="inline-flex items-center px-6 py-3 rounded-full bg-primary dark:bg-blue-600 text-white hover:bg-white hover:text-primary dark:hover:bg-white dark:hover:text-blue-600 transition-colors"
               >
                 View Resume
+                <FaDownload className="ml-2 w-4 h-4" />
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center px-6 py-3 rounded-full border-2 border-primary dark:border-blue-400 text-primary dark:text-blue-400 hover:bg-primary/10 dark:hover:bg-blue-900/30 transition-colors"
+                className="inline-flex items-center px-6 py-3 rounded-full border-2 border-primary dark:border-blue-400 text-primary dark:text-blue-400 hover:bg-primary dark:hover:bg-blue-600 hover:text-white dark:hover:text-white transition-colors"
               >
                 Contact Me
               </a>
