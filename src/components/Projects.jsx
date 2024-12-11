@@ -2,8 +2,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import youfocusImage from '../assets/Youfocus.png';
-import Profl from '../assets/Profl.jpg';
-import HeroImage from '../assets/HeroImage.jpg';
+import Profl from '../assets/Profl.jpg';  
+import Portfolio from '../assets/Portfolio.png';
+
 
 
 const Projects = () => {
@@ -33,13 +34,13 @@ const Projects = () => {
       githubUrl: 'https://github.com/Inzaghi-Mohamed/YouFocus',
     },
     {
-      title: 'Project 2',
+      title: 'Porfolio',
       description:
-        'An e-commerce platform with advanced filtering, shopping cart functionality, and secure payment integration using Stripe.',
-      image: HeroImage,
-      technologies: ['React', 'Redux', 'Node.js', 'PostgreSQL'],
-      liveUrl: 'https://project2.com',
-      githubUrl: 'https://github.com/yourusername/project2',
+        'A simple portfolio website built with React, Tailwind CSS, and Framer Motion.',
+      image: Portfolio,
+      technologies: ['React', 'Tailwind CSS', 'Framer Motion', 'Vite', 'Node.js'],
+      liveUrl: 'https://portfolio.techscripted.info/',
+      githubUrl: 'https://github.com/Inzaghi-Mohamed/Portfolio',
     },
     {
       title: 'Project 3',
