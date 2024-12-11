@@ -1,6 +1,6 @@
 import { motion, useAnimation } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaYoutube, FaDownload } from 'react-icons/fa';
-import heroImage from '../assets/HeroImage.jpg';
+import heroImage from '../assets/Profl.jpg';
 import { useEffect, useState } from 'react';
 
 const ToggleTypeWriter = ({ texts, className }) => {
