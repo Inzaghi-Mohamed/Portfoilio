@@ -2,7 +2,6 @@ import { motion, useAnimation } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaYoutube, FaDownload } from 'react-icons/fa';
 import heroImage from '../assets/HeroImage.jpg';
 import { useEffect, useState } from 'react';
-import resume from '../assets/resume.pdf';
 
 const ToggleTypeWriter = ({ texts, className }) => {
   const controls = useAnimation();
@@ -141,7 +140,7 @@ const Hero = () => {
               className="flex flex-wrap gap-4 mb-8"
             >
               <a
-                href={resume}
+                href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-6 py-3 rounded-full bg-primary dark:bg-blue-600 text-white hover:bg-white hover:text-primary dark:hover:bg-white dark:hover:text-blue-600 transition-colors"
