@@ -5,8 +5,6 @@ import youfocusImage from '../assets/Youfocus.png';
 import Profl from '../assets/Profl.jpg';  
 import Portfolio from '../assets/Portfolio.png';
 
-
-
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
@@ -41,16 +39,7 @@ const Projects = () => {
       technologies: ['React', 'Tailwind CSS', 'Framer Motion', 'Vite', 'Node.js'],
       liveUrl: 'https://portfolio.techscripted.info/',
       githubUrl: 'https://github.com/Inzaghi-Mohamed/Portfolio',
-    },
-    {
-      title: 'Project 3',
-      description:
-        'A real-time chat application with features like group messaging, file sharing, and message encryption.',
-      image: Profl,
-      technologies: ['React', 'Socket.io', 'Node.js', 'MongoDB'],
-      liveUrl: 'https://project3.com',
-      githubUrl: 'https://github.com/yourusername/project3',
-    },
+    }
   ];
 
   const containerVariants = {
@@ -86,7 +75,7 @@ const Projects = () => {
       return [projects[currentIndex]];
     } else {
       let visibleProjects = [];
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < Math.min(3, projects.length); i++) {
         const index = (currentIndex + i) % projects.length;
         visibleProjects.push(projects[index]);
       }
@@ -113,7 +102,7 @@ const Projects = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
             <AnimatePresence initial={false} custom={direction}>
-              {getVisibleProjects().map((project, index) => (
+              {getVisibleProjects().map((project) => (
                 <motion.div
                   key={project.title}
                   variants={itemVariants}
