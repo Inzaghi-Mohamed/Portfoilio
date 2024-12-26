@@ -84,19 +84,14 @@ const Hero = () => {
   const socialLinks = [
     {
       name: 'GitHub',
-      url: 'https://github.com/YourGitHubUsername',
+      url: 'https://github.com/Inzaghi-Mohamed',
       icon: FaGithub,
     },
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/YourLinkedInUsername',
+      url: 'https://www.linkedin.com/in/abdirizak-mohamed-03b9a4271/',
       icon: FaLinkedin,
-    },
-    {
-      name: 'YouTube',
-      url: 'https://youtube.com/@YourYouTubeChannel',
-      icon: FaYoutube,
-    },
+    }
   ];
 
   return (

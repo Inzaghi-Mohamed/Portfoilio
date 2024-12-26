@@ -71,8 +71,8 @@ const About = () => {
             className="max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-300 mb-12 text-center"
           >
             <p className="mb-4">
-              I'm a passionate Fullstack Developer with expertise in building modern web applications.
-              I specialize in creating responsive, user-friendly interfaces and robust backend systems.
+              I'm a passionate Fullstack Developer with a passion for building modern web applications.
+              I'm a quick learner and I'm always looking to learn new technologies and improve my skills.
             </p>
             <p>
               My approach combines technical excellence with creative problem-solving,

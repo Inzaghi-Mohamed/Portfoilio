@@ -5,25 +5,19 @@ const Contact = () => {
   const socialLinks = [
     {
       name: 'GitHub',
-      url: 'https://github.com/YourGitHubUsername',
+      url: 'https://github.com/Inzaghi-Mohamed',
       icon: FaGithub,
       color: 'hover:text-gray-900 dark:hover:text-white',
     },
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/YourLinkedInUsername',
+      url: 'https://www.linkedin.com/in/abdirizak-mohamed-03b9a4271/',
       icon: FaLinkedin,
       color: 'hover:text-blue-600',
     },
     {
-      name: 'YouTube',
-      url: 'https://youtube.com/@YourYouTubeChannel',
-      icon: FaYoutube,
-      color: 'hover:text-red-600',
-    },
-    {
       name: 'Email',
-      url: 'mailto:your.email@example.com',
+      url: 'mailto:Inzaghi3650@gmail.com',
       icon: FaEnvelope,
       color: 'hover:text-primary',
     },

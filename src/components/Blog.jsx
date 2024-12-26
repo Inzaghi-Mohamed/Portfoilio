@@ -25,7 +25,8 @@ const Blog = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="flex justify-center"
         >
-          <a
+          <h1 className='text-2xl font-bold'>Coming Soon</h1>
+          {/* <a
             href="https://your-blog-url.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -33,7 +34,7 @@ const Blog = () => {
           >
             <span className="text-lg font-semibold">Visit My Blog</span>
             <FaArrowRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
-          </a>
+          </a> */}
         </motion.div>
       </div>
     </section>
