@@ -81,7 +81,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <motion.button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-md text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+            className="md:hidden p-2 rounded-md text-gray-800 dark:text-gray-200 bg-transparent dark:bg-gray-800/50 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             whileTap={{ scale: 0.95 }}
           >
             {isOpen ? <FaTimes className="h-6 w-6" /> : <FaBars className="h-6 w-6" />}
