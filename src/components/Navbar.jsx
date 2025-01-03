@@ -1,3 +1,14 @@
+/**
+ * Navbar.jsx - Navigation component
+ * Responsive navigation bar with mobile menu support
+ * Features:
+ * - Smooth scroll navigation
+ * - Theme toggle (dark/light mode)
+ * - Mobile-responsive design
+ * - Animated transitions using Framer Motion
+ * - Backdrop blur effect
+ */
+
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';
@@ -5,9 +16,17 @@ import { useTheme } from '../context/ThemeContext';
 import Profl from '../assets/Profl.jpg';
 
 const Navbar = () => {
+  // State for mobile menu visibility
   const [isOpen, setIsOpen] = useState(false);
+  // Theme context for dark/light mode
   const { isDarkMode, toggleTheme } = useTheme();
 
+  /**
+   * Navigation items configuration
+   * Each item contains:
+   * - name: Display text
+   * - href: Target section ID
+   */
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
@@ -16,6 +35,11 @@ const Navbar = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
+  /**
+   * Handles smooth scroll navigation
+   * @param {Event} e - Click event
+   * @param {string} href - Target section ID
+   */
   const handleNavClick = (e, href) => {
     e.preventDefault();
     const element = document.querySelector(href);
@@ -37,7 +61,7 @@ const Navbar = () => {
     <nav className="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-lg">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+          {/* Logo/Profile Image */}
           <motion.a
             href="#home"
             className="flex items-center"
@@ -51,8 +75,9 @@ const Navbar = () => {
             />
           </motion.a>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation Menu */}
           <div className="hidden md:flex items-center space-x-8">
+            {/* Navigation Links */}
             {navItems.map((item) => (
               <motion.a
                 key={item.name}
@@ -64,6 +89,7 @@ const Navbar = () => {
                 {item.name}
               </motion.a>
             ))}
+            {/* Theme Toggle Button */}
             <motion.button
               onClick={toggleTheme}
               className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
@@ -78,7 +104,7 @@ const Navbar = () => {
             </motion.button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Toggle Button */}
           <motion.button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 rounded-md text-gray-800 dark:text-gray-200 bg-transparent dark:bg-gray-800/50 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
@@ -89,7 +115,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Panel */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -99,6 +125,7 @@ const Navbar = () => {
             className="md:hidden bg-white dark:bg-gray-900 shadow-lg"
           >
             <div className="container mx-auto px-4 py-4">
+              {/* Mobile Theme Toggle */}
               <div className="flex items-center justify-between mb-4">
                 <motion.button
                   onClick={toggleTheme}
@@ -116,12 +143,13 @@ const Navbar = () => {
                   {isDarkMode ? 'Light Mode' : 'Dark Mode'}
                 </span>
               </div>
+              {/* Mobile Navigation Links */}
               {navItems.map((item) => (
                 <motion.a
                   key={item.name}
                   href={item.href}
                   className="block py-2 text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors"
-                  whileHover={{ x: 10 }}
+                  whileHover={{ x: 10 }} // Slide effect on hover
                   onClick={(e) => handleNavClick(e, item.href)}
                 >
                   {item.name}

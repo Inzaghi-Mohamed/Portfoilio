@@ -1,41 +1,53 @@
 {
+  /**
+   * Personal Website Project Configuration
+   * A modern React-based portfolio website
+   */
   "name": "personal-website",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  
+  // Node.js version requirement
   "engines": {
     "node": ">=18.0.0"
   },
+  
+  // NPM scripts for development, building, and deployment
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "start": "node server.js",
-    "heroku-postbuild": "npm run build"
+    "dev": "vite", // Start development server
+    "build": "vite build", // Create production build
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0", // Run ESLint
+    "preview": "vite preview", // Preview production build locally
+    "start": "node server.js", // Start production server
+    "heroku-postbuild": "npm run build" // Heroku deployment build script
   },
+  
+  // Production dependencies
   "dependencies": {
-    "@heroicons/react": "^2.1.5",
-    "express": "^4.21.1",
-    "framer-motion": "^11.11.17",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-icons": "^5.3.0",
-    "react-router-dom": "^6.28.0"
+    "@heroicons/react": "^2.1.5", // Hero Icons component library
+    "express": "^4.21.1", // Server framework for production
+    "framer-motion": "^11.11.17", // Animation library
+    "react": "^18.3.1", // React core
+    "react-dom": "^18.3.1", // React DOM manipulation
+    "react-icons": "^5.3.0", // Icon component library
+    "react-router-dom": "^6.28.0" // Routing library
   },
+  
+  // Development dependencies
   "devDependencies": {
-    "@eslint/js": "^9.13.0",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "@vitejs/plugin-react": "^4.3.3",
-    "autoprefixer": "^10.4.20",
-    "eslint": "^9.13.0",
-    "eslint-plugin-react": "^7.37.2",
-    "eslint-plugin-react-hooks": "^5.0.0",
-    "eslint-plugin-react-refresh": "^0.4.14",
-    "globals": "^15.11.0",
-    "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.15",
-    "vite": "^5.4.10"
+    "@eslint/js": "^9.13.0", // ESLint JavaScript configuration
+    "@types/react": "^18.3.12", // React TypeScript definitions
+    "@types/react-dom": "^18.3.1", // React DOM TypeScript definitions
+    "@vitejs/plugin-react": "^4.3.3", // Vite React plugin
+    "autoprefixer": "^10.4.20", // CSS vendor prefix automation
+    "eslint": "^9.13.0", // Linting utility
+    "eslint-plugin-react": "^7.37.2", // React-specific linting rules
+    "eslint-plugin-react-hooks": "^5.0.0", // React hooks linting rules
+    "eslint-plugin-react-refresh": "^0.4.14", // Fast Refresh linting support
+    "globals": "^15.11.0", // Global variables definitions
+    "postcss": "^8.4.49", // CSS transformation tool
+    "tailwindcss": "^3.4.15", // Utility-first CSS framework
+    "vite": "^5.4.10" // Build tool and dev server
   }
 }
